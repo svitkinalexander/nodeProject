@@ -23,9 +23,11 @@ app.post("/register", urlencodedParser, function (request, response) {
     const mailOptions = {
         from: 'My Site <ieghor-popov-2000@mail.ru>',
         to: 'ieghor-popov-2000@mail.ru',
-        subject: '',
-        text: '',
-        html: `<b>${request.body.userName} - ${request.body.userAge}</b>`
+        subject: 'Сообщение с сайта',
+        text: 'Поломка',
+        html: `<b>Name:<b> ${request.body.name};<br>
+               <b>Email:<b> ${request.body.email};<br>
+               <b>Поломка:<b> ${request.body.message};<br>`
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
@@ -36,7 +38,7 @@ app.post("/register", urlencodedParser, function (request, response) {
         }
         transporter.close();
     });
-    response.send(`${request.body.userName} - ${request.body.userAge}`);
+    response.send();
 });
 
 app.get("/", function (request, response) {
