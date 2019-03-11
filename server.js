@@ -16,7 +16,7 @@ app.post("/register", urlencodedParser, function (request, response) {
         secure: true, //true --> will use ssl
         auth: {
             user: 'ieghor-popov-2000@mail.ru',
-            pass: 'GB6K824a'
+            pass: 'Gb7k854A'
         }
     });
 
