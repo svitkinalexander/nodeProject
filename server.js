@@ -15,8 +15,8 @@ app.post("/register", urlencodedParser, function (request, response) {
         port: 465,
         secure: true, //true --> will use ssl
         auth: {
-            user: 'ieghor-popov-2000@mail.ru',
-            pass: 'GB6K824a'
+            user: 'u mail',
+            pass: 'u password of mail'
         }
     });
 
