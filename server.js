@@ -38,7 +38,11 @@ app.post("/register", urlencodedParser, function (request, response) {
         }
         transporter.close();
     });
-    response.send();
+    /* response.send(); */
+    response.writeHead(302, {
+        'Location': 'index.html'
+    });
+    response.end();
 });
 
 app.get("/", function (request, response) {
@@ -47,6 +51,3 @@ app.get("/", function (request, response) {
 
 app.listen(process.env.PORT || 8080);
 console.log('Server running on port 8080.');
-
-
-
