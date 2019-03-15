@@ -72,9 +72,9 @@ app.post("/register", urlencodedParser, function (request, response) {
     response.end();
 });
 
-app.get("/", function (request, response) {
+/* app.get("/", function (request, response) {
     response.send("Главная страница");
-});
+}); */
 
 app.listen(process.env.PORT || 8080);
 console.log('Server running on port 8080.');
