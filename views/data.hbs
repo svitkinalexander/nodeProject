@@ -167,7 +167,46 @@
                         </div>
                     </div>
                 </div>
-                <div id="data">{{data}}</div>
+                <div id="data">
+                    <table class="table table-bordered table-inverse">
+                    <thead>
+                        <tr>
+                            <th>
+                                Номер imei
+                            </th>
+                            <th>
+                                Название модели устройства
+                            </th>
+                            <th>
+                                Готовность заказа(OK/ Not OK)
+                            </th>
+                            <th>
+                                Стоимость работы
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td>
+                            {{data.imei}}
+                          </td>
+                          <td>
+                            {{data.model}}
+                          </td>
+                          <td>
+                            {{data.status}}
+                          </td>
+                          <td>
+                            {{data.cost}}
+                          </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+<form name="search" action="/imei" method="POST">
+    <input type="number" id="bsearch_text" name="words" maxlength="15" placeholder="Введите imei номер" required />
+    <input type="submit" id="bsearch" value="Проверить готовность!" name="bsearch" />
+</form>
             </div>
         </div>
     </section>

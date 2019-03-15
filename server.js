@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const mysql = require('mysql');
-const fs = require('fs');
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 let app = express();
@@ -21,12 +20,12 @@ app.post("/imei", urlencodedParser, function (request, response) {
         database: 'remontdb'
     });
 
-     connection.query('SELECT * FROM Remont;', function (error, result, fields) {
+     connection.query(`SELECT * FROM Remont WHERE imei = ${request.body.words};`, function (error, result, fields) {
          if (error) {
              return response.status(400).json({ error: error.message });
         };
         console.log('result: ', result);
-          response.render('data.hbs', { data: JSON.stringify(result)});
+          response.render('data.hbs', { data: result[0]});
          //response.end(JSON.stringify(result)); 
          //return response.render('data.hbs', { data: JSON.stringify(result)});//{{data.result}}
     });
@@ -43,8 +42,8 @@ app.post("/register", urlencodedParser, function (request, response) {
         port: 465,
         secure: true, //true --> will use ssl
         auth: {
-            user: 'youmail',
-            pass: 'youpassword'
+            user: 'ieghor-popov-2000@mail.ru',
+            pass: 'Gb7k854A'
         }
     });
 

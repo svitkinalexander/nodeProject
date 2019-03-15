@@ -1,4 +1,4 @@
-
+CREATE DATABASE remontdb;
 USE remontdb;
 SET NAMES 'cp1251';
 SET CHARACTER SET 'cp1251';
