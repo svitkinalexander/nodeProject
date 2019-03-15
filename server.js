@@ -14,10 +14,10 @@ app.post("/imei", urlencodedParser, function (request, response) {
     if (!request.body) return response.sendStatus(400);
     console.log(request.body);
     let connection = mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        password: "password",
-        database: 'remontdb'
+        host: "us-cdbr-iron-east-03.cleardb.net",
+        user: "b19cd822bf8582",
+        password: "bc3ac634",
+        database: 'heroku_0797947479f038e'
     });
 
      connection.query(`SELECT * FROM Remont WHERE imei = ${request.body.words};`, function (error, result, fields) {
