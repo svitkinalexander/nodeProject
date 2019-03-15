@@ -1,9 +1,37 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const mysql = require('mysql');
+const fs = require('fs');
+
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 let app = express();
 app.use(express.static(__dirname + '/public'));
+app.get("/imei", urlencodedParser, function (request, response) {
+    response.sendFile(__dirname + "/imei.html");
+});
+
+app.post("/imei", urlencodedParser, function (request, response) {
+    if (!request.body) return response.sendStatus(400);
+    console.log(request.body);
+    let connection = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "password",
+        database: 'remontdb'
+    });
+
+     connection.query('SELECT * FROM Remont;', function (error, result, fields) {
+         if (error) {
+             return response.status(400).json({ error: error.message });
+        };
+        console.log('result: ', result);
+          response.render('data.hbs', { data: JSON.stringify(result)});
+         //response.end(JSON.stringify(result)); 
+         //return response.render('data.hbs', { data: JSON.stringify(result)});//{{data.result}}
+    });
+});
+
 app.get("/register", urlencodedParser, function (request, response) {
     response.sendFile(__dirname + "/register.html");
 });
@@ -15,8 +43,8 @@ app.post("/register", urlencodedParser, function (request, response) {
         port: 465,
         secure: true, //true --> will use ssl
         auth: {
-            user: 'ieghor-popov-2000@mail.ru',
-            pass: 'Gb7k854A'
+            user: 'youmail',
+            pass: 'youpassword'
         }
     });
 

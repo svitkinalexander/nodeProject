@@ -167,14 +167,12 @@
                         </div>
                     </div>
                 </div>
-                <form name="search" action="/imei" method="POST">
-                    <input type="text" id="bsearch_text" name="words" maxlength="15" placeholder="Введите imei номер" />
-                    <input type="submit" id="bsearch" value="Проверить готовность!" name="bsearch" />
-                </form>
+                <div id="data">{{data}}</div>
             </div>
         </div>
     </section>
     <!--Service-->
+
     <!-- Portfolio -->
     <section id="Portfolio" class="content">
         <!-- Container -->
@@ -524,7 +522,6 @@
                 <!-- Заголовок модального окна -->
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-
                 </div>
                 <!-- Основное содержимое модального окна -->
                 <div class="modal-body">
@@ -614,6 +611,7 @@
                     <!-- Заголовок модального окна -->
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <!--<h4 class="modal-title">Заголовок модального окна</h4>-->
 
                     </div>
                     <!-- Основное содержимое модального окна -->
@@ -666,20 +664,20 @@
         <script>
             new WOW().init();
         </script>
-<!-- BEGIN JIVOSITE CODE {literal} -->
-<script type='text/javascript'>
-    (function () {
-        var widget_id = '59vbIfZDUR'; var d = document; var w = window; function l() {
-            var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
-            s.src = '//code.jivosite.com/script/widget/' + widget_id
-                ; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);
-        }
-        if (d.readyState == 'complete') { l(); } else {
-            if (w.attachEvent) { w.attachEvent('onload', l); }
-            else { w.addEventListener('load', l, false); }
-        }
-    })();
-</script>
-<!-- {/literal} END JIVOSITE CODE -->
+        <!-- BEGIN JIVOSITE CODE {literal} -->
+        <script type='text/javascript'>
+            (function () {
+                var widget_id = '59vbIfZDUR'; var d = document; var w = window; function l() {
+                    var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+                    s.src = '//code.jivosite.com/script/widget/' + widget_id
+                        ; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);
+                }
+                if (d.readyState == 'complete') { l(); } else {
+                    if (w.attachEvent) { w.attachEvent('onload', l); }
+                    else { w.addEventListener('load', l, false); }
+                }
+            })();
+        </script>
+        <!-- {/literal} END JIVOSITE CODE -->
 </body>
 </html>
