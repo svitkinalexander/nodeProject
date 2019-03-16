@@ -482,12 +482,12 @@
                     </div>
                     <div class="col-lg-8 wow fadeInLeft delay-06s">
                         <div class="form">
-                            <form method="post" novalidate action="/register">
+                            <form method="post" action="/register">
                                 <div class="form-group label-floating">
                                     <div class="input-group">
                                         <label class="control-label">Имя</label>
                                         <input type="text" class="form-control" name="name" required
-                                            data-validation-required-message="Please enter your name" />
+                                            data-validation-required-message="Пожалуйста, введите ваше имя" />
                                         <p class="help-block"></p>
                                     </div>
                                 </div>
@@ -495,16 +495,32 @@
                                     <div class="input-group">
                                         <label class="control-label">Email</label>
                                         <input type="email" class="form-control" name="email" required
-                                            data-validation-required-message="Please enter your email" />
+                                            data-validation-required-message="Пожалуйста, введите ваш email" />
                                     </div>
                                 </div>
 
                                 <div class="form-group label-floating">
                                     <div class="input-group">
+                                        <label class="control-label">Ваш номер Imei устройства</label>
+                                        <input type="number" class="form-control" name="imei" required
+                                            data-validation-required-message="Пожалуйста, введите ваш номер Imei (найдёте в инструкции к устойству)" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group label-floating">
+                                    <div class="input-group">
+                                        <label class="control-label">Ваше устройство, требующе ремонта</label>
+                                        <input type="text" class="form-control" name="device" required
+                                            data-validation-required-message="Пожалуйста, введите устройство, требующее ремонта" />
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group label-floating">
+                                    <div class="input-group">
                                         <label class="control-label">Поломка</label>
                                         <textarea rows="10" cols="100" class="form-control" name="message" required
                                             data-validation-required-message="Please enter your message" minlength="5"
-                                            data-validation-minlength-message="Min 5 characters" maxlength="999"
+                                            data-validation-minlength-message="Минимально можно ввести 5 символов" maxlength="999"
                                             style="resize:none"></textarea>
                                     </div>
                                 </div>
