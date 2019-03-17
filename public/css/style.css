@@ -86,6 +86,15 @@ p {
     margin: 0;
 }
 
+figure {
+    position: absolute; 
+    left: 0px; 
+    top: 0px; 
+    transform: translate3d(1011px, 0px, 0px) scale3d(1, 1, 1); 
+    width: 337px; 
+    opacity: 1;
+}
+
 /* Header Styles
 ---------------------------------*/
 
@@ -145,10 +154,6 @@ p {
 .navStyle ul li {
     display: inline-block;
     margin: 0 5px;
-}
-
-.navStyle ul li:first-child {
-	/*margin:0px;*/;
 }
 
 .navStyle ul li:last-child {
@@ -328,16 +333,7 @@ a.read_more2:hover {
     margin: 0px auto 0;
 }
 
-.service_icon.icon2 {
-    /* border: 2px solid #1d3546; */
-}
-
-.service_icon.icon3 {
-    /* border: 2px solid #1d3546; */
-}
-
 .service_icon span {
-    /* background: rgba(255, 255, 255, 0.97); */
     border-radius: 0;
     display: block;
     height: 100%;

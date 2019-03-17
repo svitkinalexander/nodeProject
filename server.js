@@ -1,52 +1,44 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const mysql = require('mysql');
-
-const urlencodedParser = bodyParser.urlencoded({ extended: false });
-let app = express();
+const jsonParser = express.json();
+const app = express();
 const connection = mysql.createConnection({
-    host: "us-cdbr-iron-east-03.cleardb.net",//us-cdbr-iron-east-03.cleardb.net
-    user: "b19cd822bf8582",//b19cd822bf8582
-    password: "bc3ac634",//bc3ac634
-    database: 'heroku_0797947479f038e'//heroku_0797947479f038e
+    host: "localhost",//us-cdbr-iron-east-03.cleardb.net
+    user: "root",//b19cd822bf8582
+    password: "password",//bc3ac634
+    database: 'remontdb'//heroku_0797947479f038e
 });
 
 app.use(express.static(__dirname + '/public'));
-app.get("/imei", urlencodedParser, function (request, response) {
-    response.sendFile(__dirname + "/imei.html");
+app.get("/imei", jsonParser, function (request, response) {
+    response.sendFile(__dirname + "/index.html");
 });
 
-app.post("/imei", urlencodedParser, function (request, response) {
+app.post("/imei", jsonParser, function (request, response) {
     if (!request.body) return response.sendStatus(400);
     console.log(request.body);
-
-     connection.query(`SELECT * FROM Remont WHERE imei = ${request.body.words};`, function (error, result) {
+    connection.query(`SELECT * FROM Remont WHERE imei = ${request.body.words};`, function (error, result) {
          if (error) {
              return response.status(400).json({ error: error.message });
         };
-        console.log('result: ', result);
-          response.render('data.hbs', { data: result[0]});
-         //response.end(JSON.stringify(result)); 
-         //return response.render('data.hbs', { data: JSON.stringify(result)});//{{data.result}}
+        console.log('result: ', result[0]);
+        response.writeHead(200, { 'Content-Type': 'application/json' });
+        response.end(JSON.stringify(result[0])); 
     });
 });
 
-app.get("/register", urlencodedParser, function (request, response) {
-    response.sendFile(__dirname + "/register.html");
+app.get("/register", jsonParser, function (request, response) {
+    response.sendFile(__dirname + "/index.html");
 });
 
-app.post("/register", urlencodedParser, function (request, response) {
+app.post("/register", jsonParser, function (request, response) {
     connection.query(`INSERT INTO Remont (imei, model, status, cost) VALUES ('${request.body.imei}', '${request.body.device}', 'Not OK', '20 BYN')`, function (error) {
         if (error) {
             return response.status(400).json({ error: error.message });
         };
         console.log('Table successfully updated!');
-        //connection.end(); 
     });
-/* });
-
-app.post("/register", urlencodedParser, function (request, response) { */
     if (!request.body) return response.sendStatus(400);
     console.log(request.body);
 
@@ -55,8 +47,8 @@ app.post("/register", urlencodedParser, function (request, response) { */
         port: 465,
         secure: true, //true --> will use ssl
         auth: {
-            user: 'ieghor-popov-2000@mail.ru',
-            pass: 'Gb7k854A'
+            user: 'umail',
+            pass: 'upassword'
         }
     });
 
@@ -81,16 +73,13 @@ app.post("/register", urlencodedParser, function (request, response) { */
         transporter.close();
     });
 
-    /* response.send(); */
-    response.writeHead(302, {
-        'Location': 'index.html'
-    });
-    response.end();
+    response.writeHead(200, { 'Content-Type': 'application/json' });
+    response.end(); 
 });
 
-/* app.get("/", function (request, response) {
+ app.get("/", function (request, response) {
     response.send("Главная страница");
-}); */
+}); 
 
 app.listen(process.env.PORT || 8080);
 console.log('Server running on port 8080.');

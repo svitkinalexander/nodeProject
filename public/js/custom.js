@@ -5,46 +5,46 @@ Licence under Creative Commons Attribution 3.0
 Do not remove the back-link in this web template 
 -------------------------------------------------------*/
 
-$(window).load(function() {
+$(window).load(function () {
     jQuery('#all').click();
     return false;
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
     $('#header_wrapper').scrollToFixed();
-    $('.res-nav_click').click(function() {
+    $('.res-nav_click').click(function () {
         $('.main-nav').slideToggle();
         return false
-	if ($('#main-nav ul li:first-child').hasClass('active')) {
-        $('#main-nav').css('background', 'red');
-    }
+        if ($('#main-nav ul li:first-child').hasClass('active')) {
+            $('#main-nav').css('background', 'red');
+        }
     });
-	
+
     function resizeText() {
-        var preferredWidth = 767;
-        var displayWidth = window.innerWidth;
-        var percentage = displayWidth / preferredWidth;
-        var fontsizetitle = 25;
-        var newFontSizeTitle = Math.floor(fontsizetitle * percentage);
+        let preferredWidth = 767;
+        let displayWidth = window.innerWidth;
+        let percentage = displayWidth / preferredWidth;
+        let fontsizetitle = 25;
+        let newFontSizeTitle = Math.floor(fontsizetitle * percentage);
 
         $(".divclass").css("font-size", newFontSizeTitle)
     }
-    
-    $('#mainNav').onePageNav({ 
-       	navItems: 'a',
-		currentClass: 'active',
-		changeHash: false,
-		easing: 'swing',
-		filter: '',
-		navHeight: 60,
-		scrollSpeed: 750,
-		scrollThreshold: 0.5,
-		begin: false,
-		end: false,
-		scrollChange: false
+
+    $('#mainNav').onePageNav({
+        navItems: 'a',
+        currentClass: 'active',
+        changeHash: false,
+        easing: 'swing',
+        filter: '',
+        navHeight: 60,
+        scrollSpeed: 750,
+        scrollThreshold: 0.5,
+        begin: false,
+        end: false,
+        scrollChange: false
     });
 
-    var container = $('#portfolio_wrapper');
+    let container = $('#portfolio_wrapper');
 
 
     container.isotope({
@@ -56,10 +56,10 @@ $(document).ready(function() {
         layoutMode: 'fitRows'
     });
 
-    $('#filters a').click(function() {
+    $('#filters a').click(function () {
         $('#filters a').removeClass('active');
         $(this).addClass('active');
-        var selector = $(this).attr('data-filter');
+        let selector = $(this).attr('data-filter');
         container.isotope({
             filter: selector
         });
@@ -68,7 +68,7 @@ $(document).ready(function() {
     });
 
     function splitColumns() {
-        var winWidth = $(window).width(),
+        let winWidth = $(window).width(),
             columnNumb = 1;
 
 
@@ -84,13 +84,13 @@ $(document).ready(function() {
 
         return columnNumb;
     }
-	
+
     function setColumns() {
-        var winWidth = $(window).width(),
+        let winWidth = $(window).width(),
             columnNumb = splitColumns(),
             postWidth = Math.floor(winWidth / columnNumb);
 
-        container.find('.portfolio-item').each(function() {
+        container.find('.portfolio-item').each(function () {
             $(this).css({
                 width: postWidth + 'px'
             });
@@ -102,24 +102,15 @@ $(document).ready(function() {
         container.isotope('reLayout');
     }
 
-    container.imagesLoaded(function() {
+    container.imagesLoaded(function () {
         setColumns();
     });
 
     $(".fancybox").fancybox();
-	
-    $(window).bind('resize', function() {
+
+    $(window).bind('resize', function () {
         setProjects();
     });
-	/* $('#main-nav a').on('click', function(){ 
-		 if ($(window).width() < 780) { 
-		   $('#nav-toggle').trigger( "click" );
-		}
-		else { 
-		}
-	}); */
- 
-	
 });
 
  
