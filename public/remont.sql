@@ -1,4 +1,3 @@
-
 CREATE DATABASE remontdb;
 USE remontdb;
 CREATE TABLE Remont
