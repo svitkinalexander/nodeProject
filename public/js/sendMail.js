@@ -12,7 +12,6 @@ document.getElementById('sendMail').addEventListener('click', function (event) {
     request.setRequestHeader('Content-Type', 'application/json');
     request.addEventListener('load', () => {
       console.log('send!');
-      document.getElementById('mailTo').style.display = 'none';
       serachForm.elements['name'].value = null;
       serachForm.elements['email'].value = null;
       serachForm.elements['imei'].value = null;
