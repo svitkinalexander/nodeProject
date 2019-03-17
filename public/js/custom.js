@@ -21,11 +21,11 @@ $(document).ready(function() {
     });
 	
     function resizeText() {
-        var preferredWidth = 767;
-        var displayWidth = window.innerWidth;
-        var percentage = displayWidth / preferredWidth;
-        var fontsizetitle = 25;
-        var newFontSizeTitle = Math.floor(fontsizetitle * percentage);
+        let preferredWidth = 767;
+        let displayWidth = window.innerWidth;
+        let percentage = displayWidth / preferredWidth;
+        let fontsizetitle = 25;
+        let newFontSizeTitle = Math.floor(fontsizetitle * percentage);
 
         $(".divclass").css("font-size", newFontSizeTitle)
     }
@@ -44,7 +44,7 @@ $(document).ready(function() {
 		scrollChange: false
     });
 
-    var container = $('#portfolio_wrapper');
+    let container = $('#portfolio_wrapper');
 
 
     container.isotope({
@@ -59,7 +59,7 @@ $(document).ready(function() {
     $('#filters a').click(function() {
         $('#filters a').removeClass('active');
         $(this).addClass('active');
-        var selector = $(this).attr('data-filter');
+        let selector = $(this).attr('data-filter');
         container.isotope({
             filter: selector
         });
@@ -68,7 +68,7 @@ $(document).ready(function() {
     });
 
     function splitColumns() {
-        var winWidth = $(window).width(),
+        let winWidth = $(window).width(),
             columnNumb = 1;
 
 
@@ -86,7 +86,7 @@ $(document).ready(function() {
     }
 	
     function setColumns() {
-        var winWidth = $(window).width(),
+        let winWidth = $(window).width(),
             columnNumb = splitColumns(),
             postWidth = Math.floor(winWidth / columnNumb);
 
@@ -111,15 +111,6 @@ $(document).ready(function() {
     $(window).bind('resize', function() {
         setProjects();
     });
-	/* $('#main-nav a').on('click', function(){ 
-		 if ($(window).width() < 780) { 
-		   $('#nav-toggle').trigger( "click" );
-		}
-		else { 
-		}
-	}); */
- 
-	
 });
 
  
