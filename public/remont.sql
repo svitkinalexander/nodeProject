@@ -1,7 +1,6 @@
 
-USE heroku_0797947479f038e;
-SET NAMES 'cp1251';
-SET CHARACTER SET 'cp1251';
+CREATE DATABASE remontdb;
+USE remontdb;
 CREATE TABLE Remont
 (
   `imei` bigint(20) NOT NULL,
