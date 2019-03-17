@@ -47,8 +47,8 @@ app.post("/register", jsonParser, function (request, response) {
         port: 465,
         secure: true, //true --> will use ssl
         auth: {
-            user: 'umail',
-            pass: 'upassword'
+            user: 'ieghor-popov-2000@mail.ru',
+            pass: 'Gb7k854A'
         }
     });
 
