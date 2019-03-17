@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Сервисный центр Мурзилка</title>
+    <title>Сервисный центр E&E</title>
     <!-- Material Design fonts -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -34,7 +34,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="javascript:void(0)">i-mogilev</a>
+                    <a class="navbar-brand" href="javascript:void(0)">E&E</a>
                 </div>
                 <div id="main-nav" class="navbar-collapse collapse navbar-responsive-collapse navStyle">
                     <ul class="nav navbar-nav" id="mainNav">
@@ -60,7 +60,7 @@
                             <div class="top_left_cont zoomIn wow animated">
                                 <h2><strong>Сломался гаджет -</strong>
                                     <span style="font-size:28px;">теперь наша проблема!</span></h2>
-                                <p>i-mogilev поможет вам</p>
+                                <p>E&E поможет вам</p>
                                 <a href="#contact" class="btn btn-raised btn-lg scroll-link">Заказать ремонт</a>
                             </div>
                         </div>
@@ -85,9 +85,7 @@
                     <div class="col-md-6">
                         <div class="content">
                             <h2>Акция</h2>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                has been the industry's standard dummy text ever since the 1500s, when an unknown
-                                printer.</p>
+                            <p>В честь юбилея нашего центра - 10 лет успешного и качественного ремонта электронных девайсов, скидка в 20% на любые виды ремонта</p>
                             <div class="compayt-button">
                                 <a href="#contact" class="scroll-link btn btn-effect scroll-link">Заказать<i
                                         class="icon-envelope"></i></a>
@@ -168,7 +166,7 @@
                     </div>
                 </div>
                 <form name="search" action="/imei" method="POST">
-                    <input type="text" id="bsearch_text" name="words" maxlength="15" placeholder="Введите imei номер" />
+                    <input type="number" id="bsearch_text" name="words" maxlength="15" placeholder="Введите imei номер" required/>
                     <input type="submit" id="bsearch" value="Проверить готовность!" name="bsearch" />
                 </form>
             </div>
@@ -244,6 +242,38 @@
                     </figcaption>
                 </figure>
                 <!--/Portfolio Item -->
+
+                 <!-- Portfolio Item-->
+                 <figure
+                 style="position: absolute; left: 0px; top: 0px; transform: translate3d(337px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;"
+                 class="portfolio-item one-four	web isotope-item effect-oscar">
+                 <div class="portfolio_img"> <img src="img/portfolio_pic10.jpg" alt="Portfolio 1"> </div>
+                 <figcaption>
+                     <div>
+                         <a style="text-decoration:none;" href="#myModal2" data-toggle="modal">
+                             <h2>Стационарные PC</h2>
+                             <p>Подробнее...</p>
+                         </a>
+                     </div>
+                 </figcaption>
+             </figure>
+             <!--/Portfolio Item -->
+
+              <!-- Portfolio Item-->
+              <figure
+              style="position: absolute; left: 0px; top: 0px; transform: translate3d(337px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;"
+              class="portfolio-item one-four	web isotope-item effect-oscar">
+              <div class="portfolio_img"> <img src="img/portfolio_pic9.jpg" alt="Portfolio 1"> </div>
+              <figcaption>
+                  <div>
+                      <a style="text-decoration:none;" href="#myModal2" data-toggle="modal">
+                          <h2>Переферийные устройства для PC</h2>
+                          <p>Подробнее...</p>
+                      </a>
+                  </div>
+              </figcaption>
+          </figure>
+          <!--/Portfolio Item -->
 
                 <!-- Portfolio Item-->
                 <figure
@@ -482,12 +512,12 @@
                     </div>
                     <div class="col-lg-8 wow fadeInLeft delay-06s">
                         <div class="form">
-                            <form method="post" novalidate action="/register">
+                            <form method="post" action="/register">
                                 <div class="form-group label-floating">
                                     <div class="input-group">
                                         <label class="control-label">Имя</label>
                                         <input type="text" class="form-control" name="name" required
-                                            data-validation-required-message="Please enter your name" />
+                                            data-validation-required-message="Пожалуйста, введите ваше имя" />
                                         <p class="help-block"></p>
                                     </div>
                                 </div>
@@ -495,16 +525,32 @@
                                     <div class="input-group">
                                         <label class="control-label">Email</label>
                                         <input type="email" class="form-control" name="email" required
-                                            data-validation-required-message="Please enter your email" />
+                                            data-validation-required-message="Пожалуйста, введите ваш email" />
                                     </div>
                                 </div>
 
                                 <div class="form-group label-floating">
                                     <div class="input-group">
+                                        <label class="control-label">Ваш номер Imei устройства</label>
+                                        <input type="number" class="form-control" name="imei" required
+                                            data-validation-required-message="Пожалуйста, введите ваш номер Imei (найдёте в инструкции к устойству)" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group label-floating">
+                                    <div class="input-group">
+                                        <label class="control-label">Ваше устройство, требующе ремонта</label>
+                                        <input type="text" class="form-control" name="device" required
+                                            data-validation-required-message="Пожалуйста, введите устройство, требующее ремонта" />
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group label-floating">
+                                    <div class="input-group">
                                         <label class="control-label">Поломка</label>
                                         <textarea rows="10" cols="100" class="form-control" name="message" required
                                             data-validation-required-message="Please enter your message" minlength="5"
-                                            data-validation-minlength-message="Min 5 characters" maxlength="999"
+                                            data-validation-minlength-message="Минимально можно ввести 5 символов" maxlength="999"
                                             style="resize:none"></textarea>
                                     </div>
                                 </div>
