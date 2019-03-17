@@ -147,10 +147,6 @@ p {
     margin: 0 5px;
 }
 
-.navStyle ul li:first-child {
-	/*margin:0px;*/;
-}
-
 .navStyle ul li:last-child {
     margin: 0;
 }
@@ -328,16 +324,7 @@ a.read_more2:hover {
     margin: 0px auto 0;
 }
 
-.service_icon.icon2 {
-    /* border: 2px solid #1d3546; */
-}
-
-.service_icon.icon3 {
-    /* border: 2px solid #1d3546; */
-}
-
 .service_icon span {
-    /* background: rgba(255, 255, 255, 0.97); */
     border-radius: 0;
     display: block;
     height: 100%;
