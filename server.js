@@ -6,10 +6,10 @@ const mysql = require('mysql');
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 let app = express();
 const connection = mysql.createConnection({
-    host: "localhost",//us-cdbr-iron-east-03.cleardb.net
-    user: "root",//b19cd822bf8582
-    password: "password",//bc3ac634
-    database: 'remontdb'//heroku_0797947479f038e
+    host: "localhost",
+    user: "root",
+    password: "password",
+    database: 'remontdb'
 });
 
 app.use(express.static(__dirname + '/public'));
@@ -55,8 +55,8 @@ app.post("/register", urlencodedParser, function (request, response) { */
         port: 465,
         secure: true, //true --> will use ssl
         auth: {
-            user: 'ieghor-popov-2000@mail.ru',
-            pass: 'Gb7k854A'
+            user: 'us',
+            pass: 'pass'
         }
     });
 
