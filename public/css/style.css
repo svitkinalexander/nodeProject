@@ -1920,3 +1920,8 @@ width: 99%;
 	height: 27px;
 	color: #f3a200;
 }
+
+#success{
+    visibility: hidden;
+    color: red;
+}

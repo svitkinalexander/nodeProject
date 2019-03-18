@@ -1,7 +1,20 @@
 document.getElementById('bsearch').addEventListener('click', function (event) {
     event.preventDefault();
+    function escape(string) {
+        const htmlEscapes = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;'
+        };
+
+        return string.replace(/[&<>"']/g, function (match) {
+            return htmlEscapes[match];
+        });
+    };
     const serachForm = document.forms['search'];
-    const imei = serachForm.elements['words'].value;
+    const imei = escape(serachForm.elements['words'].value);
     const user = JSON.stringify({ words: imei});
     let request = new XMLHttpRequest();
     request.open('POST', '/imei', true);
