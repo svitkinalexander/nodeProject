@@ -315,8 +315,6 @@ a.read_more2:hover {
     padding: 40px 0 40px;
 }
 
-.service_section {
-}
 
 .service_block {
     text-align: center;
@@ -326,7 +324,6 @@ a.read_more2:hover {
 }
 
 .service_icon {
-    /* border: 2px solid #1d3546; */
     border-radius: 50%;
     width: 84px;
     height: 88px;
@@ -363,8 +360,35 @@ a.read_more2:hover {
     color: #404040;
     margin: 0px;
 }
-	
 
+.myButton { 
+background-color:#ffffff; 
+-moz-border-radius:28px; 
+-webkit-border-radius:28px; 
+border-radius:28px; 
+border:1px solid gold; 
+display:inline-block; 
+cursor:pointer; 
+color:#000000; 
+font-family:Arial; 
+font-size:17px; 
+padding:16px 31px; 
+text-decoration:none; 
+text-shadow:0px 1px 0px #000000;
+transition: 1s; 
+} 
+.myButton:hover {
+transition: 1s; 
+background-color:gold; 
+} 
+.myButton:active { 
+position:relative; 
+top:1px; 
+}
+	
+#bsearch_text{
+    color: #000000;
+}
 
 /* Latest Work
 ---------------------------------*/
@@ -400,7 +424,6 @@ a.read_more2:hover {
 }
 
 .service-list-col1 i {
-    display:;
     color: #888;
     font-size: 19px;
     font-style: normal;
@@ -765,11 +788,11 @@ img {
 #aboutUs {
     padding: 40px 0 60px;
 }
-section.companyInfo{
-}
+
+
 section.companyInfo{padding: 30px 0 0 0;}
 .company-bg{
-    background#fff;
+    background: #fff;
     padding: 50px 0;
 }
 .company-bg .content{
@@ -1566,7 +1589,7 @@ figure.effect-oscar:hover p {
 	opacity: 1;
 	-webkit-transform: scale(1);
 	transform: scale(1);
-	color: #b5b5b5;+++++++
+	color: #b5b5b5;
 }
 
 figure.effect-oscar:hover figcaption {
@@ -1727,7 +1750,7 @@ div.mc-image {
     bottom: 40px;
     padding: 10px 20px;
     text-indent: 0px;
-    moz-border-radius: 0px;
+    -moz-border-radius: 0px;
     -webkit-border-radius: 0px;
     border-radius: 0px;
     z-index: 1000;
@@ -1787,7 +1810,6 @@ div.mc-image {
 
 }
 @media (max-width: 768px) {
-.collapse {/* display: none; *//* visibility: hidden; */}
 p{
 font-size:14px;
 }
@@ -1828,12 +1850,10 @@ padding-left:0px;
 .form {
 margin: 0 18px;
 }
-.page_section.team{
+.page_section.team , #clients{
 padding: 40px 0;
 }
-, #clients {
-padding: 40px 0;
-}
+
 .client_logos ul li {
 display: inline;
 margin: 0 25px;

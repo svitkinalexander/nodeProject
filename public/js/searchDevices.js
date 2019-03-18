@@ -11,6 +11,9 @@ document.getElementById('bsearch').addEventListener('click', function (event) {
         if (request.response.length === 0) {
             document.getElementById('data').innerHTML = '<p class="text-warning"><strong>Заказ не найден!</strong></p>';
         }
+        else if (JSON.parse(request.response).imei === undefined) {
+            document.getElementById('data').innerHTML = '<p class="text-warning"><strong>Введите ваш номер imei!</strong></p>'
+        }
         else {
             document.getElementById('data').innerHTML = `<table class="table table-bordered table-inverse" id = 'searchTable'>
                         <thead>
