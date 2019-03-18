@@ -4,10 +4,10 @@ const mysql = require('mysql');
 const jsonParser = express.json();
 const app = express();
 const connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "password",
-    database: 'remontdb'
+    host: "us-cdbr-iron-east-03.cleardb.net",
+    user: "b19cd822bf8582",
+    password: "bc3ac634",
+    database: 'heroku_0797947479f038e'
 });
 
 app.use(express.static(__dirname + '/public'));
@@ -47,8 +47,8 @@ app.post("/register", jsonParser, function (request, response) {
         port: 465,
         secure: true, //true --> will use ssl
         auth: {
-            user: '',
-            pass: ''
+            user: 'ieghor-popov-2000@mail.ru',
+            pass: 'Gb7k854A'
         }
     });
 
