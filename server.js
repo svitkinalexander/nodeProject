@@ -4,10 +4,10 @@ const mysql = require('mysql');
 const jsonParser = express.json();
 const app = express();
 const connection = mysql.createConnection({
-    host: "us-cdbr-iron-east-03.cleardb.net",//us-cdbr-iron-east-03.cleardb.net
-    user: "b19cd822bf8582",//b19cd822bf8582
-    password: "bc3ac634",//bc3ac634
-    database: 'heroku_0797947479f038e'//heroku_0797947479f038e
+    host: "localhost",//us-cdbr-iron-east-03.cleardb.net
+    user: "root",//b19cd822bf8582
+    password: "password",//bc3ac634
+    database: 'remontdb'//heroku_0797947479f038e
 });
 
 app.use(express.static(__dirname + '/public'));
